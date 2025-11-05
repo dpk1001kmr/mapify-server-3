@@ -1,0 +1,73 @@
+1) react screen similar view as table
+- DONE
+2) in left side make a show/hide sidebar
+- DONE
+3) option 1 will be upload data
+- DONE
+4) option 2 will be query or filter
+- DONE
+5) on upload show top five row
+6) on click upload button file upload popup will appear
+7) it will accept only csv or xls file
+- DONE
+8) after uploading file it will match all the columns between file and database (independent of case and order of columns)
+case-1) all columns are 100% matched
+  it will show top 10 records of file and datbase columns (columns order does not matter)
+case-2) columns matched partially
+  it will show a mapping screen of fields (left side column of file and right side columns of database)
+  matched column will be selected (highleted with green border)
+  unmatched column will show drop down at right side with fields name remains after match
+- DONE
+9) after mapping all the fields complete mapping action will appear
+10) after clicking complete mapping button (it will show top 10 records of file and datbase columns (columns order does not matter))
+- DONE
+11) same button will save the records in database creating uniqueness on email id fields
+- DONE
+
+
+12) in filter section -
+
+
+13) test case in react
+---------------------------------------
+1) check whether menu is present or not
+2) mapping screen configuration
+3) multi select dropdown whether data is loading or not
+
+
+// Learn about TDD (Test driven developement)
+
+//-------------------------------------
+// Validation while uploading the file
+//-------------------------------------
+- check for all headers in all the sheets (total should be 11 fields)
+- check if any header field is missing (total should be 11 fields in the header)
+- check if extra header is present (total should be 11 fields in the header)
+
+
+//-------------------------------------
+// Validation while saving the file
+//-------------------------------------
+- check if a two file fields are mapped to same database field (don't save in this case)
+- check if any null value is present then skip the saving for that row (all fields are required)
+
+-------------
+New Points
+-------------
+
+- make popup litte small
+- user should be able to save partial mapped excel sheet
+- mask the database fields into json document and define field level properties.
+- {
+  dbfieldname: [firstName, lastName, email, phone, jobTitle, department, company, street, zipCode, city, country]
+  maskedfieldname: [First Name, Last Name, Email, Phone, Job Title, Department, Company, Street, Zip Code, City, Country]
+  mandatoryfield: [ First Name, Email, Phone, Country]
+  validation: [First Name, Email, Phone, Country]
+}
+
+- earn aws and login using aws cognito
+- Use postgres database
+
+microsoft active directive
+
+http://localhost:5173/
