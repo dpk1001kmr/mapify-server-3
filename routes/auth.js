@@ -68,7 +68,11 @@ authRouter.post("/microsoft", async (req, res) => {
 });
 
 authRouter.post("/logout", async (req, res) => {
-  res.clearCookie("token");
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "None",
+  });
   return res.status(200).json({
     status: "success",
     message: "logout successful",
